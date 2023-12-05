@@ -1,7 +1,9 @@
-FROM node:20.4-bookworm-slim
-WORKDIR /usr/src/app
-COPY . .
+# syntax=docker/dockerfile:1
+FROM node:19-bullseye
+ENV NODE_ENV=production
+WORKDIR /app
+COPY ["package.json", "package-lock.json*", "./"]
 RUN npm install
-RUN npm ci
-EXPOSE 3000
-CMD ["npm", "start"]
+EXPOSE 8000
+COPY . .
+CMD [ "npm", "start" ]
