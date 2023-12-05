@@ -1,10 +1,5 @@
-# dependencies
-/node_modules
-
-# System Files
+node_modules 
+dist
 .DS_Store
-Thumbs.db
-.breakpoints
-
-memory.txt
-old.app.js
+**/.DS_Store
+package-lock.json
